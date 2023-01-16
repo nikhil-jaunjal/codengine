@@ -1,0 +1,25 @@
+<div class="form-container" *ngIf="kpiForm" [formGroup]="kpiForm">
+    KPI Info
+    <div class="form-element">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>KPI Template Name</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="w-100 ml-10" appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="decription">
+        </mat-form-field>
+    </div>
+
+    <div class="form-element">
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Selected Department/ Designation</mat-label>
+                <mat-select formControlName="departmentId">
+                    <mat-option *ngFor="let department of departments" [value]="department.id">
+                      {{department.value}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+            <mat-slide-toggle formControlName="hasSelfReview" class="w-100 ml-10">Self Review</mat-slide-toggle>
+    </div>
+</div>
